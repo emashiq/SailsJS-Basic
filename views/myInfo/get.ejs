@@ -1,0 +1,35 @@
+<a href="/myinfo/create" class="btn btn-primary">Create</a>
+<table class="table table-bordered table-condensed table-stripped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>CreatedOn</th>
+            <th>ModifeidOn</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%
+            for(var _index=0; _index < data.length; _index++) {
+                var _contact = data[_index];
+            %>
+            <tr>
+                <td>
+                    <%=_contact.name %>
+                </td>
+                <td>
+                    <%=_contact.createdAt %>
+                </td>
+                <td>
+                    <%=_contact.updatedAt %>
+                </td>
+                <td>
+                    <a href="/myinfo/edit/<%=_contact.id %>" class="btn btn-primary btn-xs">Edit</a> |
+                    <a href="/myinfo/delete/<%=_contact.id %>" class="btn btn-danger btn-xs">Delete</a>
+                </td>
+            </tr>
+            <%
+        }
+            %>
+    </tbody>
+</table>
